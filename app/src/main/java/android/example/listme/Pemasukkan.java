@@ -11,3 +11,4 @@ public class Pemasukkan extends AppCompatActivity {
         setContentView(R.layout.activity_pemasukkan);
     }
 }
+//PUSHNYA ADILLA
