@@ -10,7 +10,5 @@ public class Pemasukkan extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pemasukkan);
     }
+    //commend push
 }
-//PUSHNYA ADILLA
-
-//testing push
