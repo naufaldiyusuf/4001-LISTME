@@ -10,6 +10,7 @@ public class aktivitas extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_aktivitas);
 
-        // push push
+
+        //push error
     }
 }
