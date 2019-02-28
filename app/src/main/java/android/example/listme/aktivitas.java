@@ -26,6 +26,7 @@ public class aktivitas extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_aktivitas);
 
+        //inisiasi
         txt_tgl = (Button) findViewById(R.id.tanggal_button);
         txt_jam = (Button) findViewById(R.id.waktu_button);
         button_tanggal = (Button) findViewById(R.id.button_simpan);
