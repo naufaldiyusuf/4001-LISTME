@@ -20,5 +20,6 @@ public class Pengeluaran extends AppCompatActivity {
         startActivity(tes3);
         tes3.putExtra("bulan", "pengeluaran1");
         tes3.putExtra("pengeluaran", "pengeluaran2");
+        //
     }
 }
