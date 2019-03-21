@@ -26,6 +26,4 @@ public class Pemasukkan extends AppCompatActivity {
         tes2.putExtra("note", "pemasukan3");
 
     }
-    //commend push
-    //error
 }
