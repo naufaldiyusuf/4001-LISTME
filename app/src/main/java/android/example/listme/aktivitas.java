@@ -95,6 +95,7 @@ public class aktivitas extends AppCompatActivity {
                 SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
                 txt_tgl.setText(sdf.format(myCalendar.getTime()));
             }
+            //
 
         });
     }
