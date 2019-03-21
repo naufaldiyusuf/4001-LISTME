@@ -2,6 +2,7 @@ package android.example.listme;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -20,6 +21,7 @@ public class aktivitas extends AppCompatActivity {
     DatePickerDialog.OnDateSetListener date;
     Button txt_tgl, txt_jam;
     Button button_tanggal;
+    Button simpan;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +31,8 @@ public class aktivitas extends AppCompatActivity {
         //inisiasi
         txt_tgl = (Button) findViewById(R.id.tanggal_button);
         txt_jam = (Button) findViewById(R.id.waktu_button);
-        button_tanggal = (Button) findViewById(R.id.button_simpan);
+        //button_tanggal = (Button) findViewById(R.id.button_simpan);
+        simpan = (Button) findViewById(R.id.button_simpan);
 
         myCalendar = Calendar.getInstance();
         date = new DatePickerDialog.OnDateSetListener() {
@@ -40,7 +43,7 @@ public class aktivitas extends AppCompatActivity {
                 myCalendar.set(Calendar.YEAR, year);
                 myCalendar.set(Calendar.MONTH, monthOfYear);
                 myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-                updateLabel();
+                //updateLabel();
             }
         };
         txt_tgl.setOnClickListener(new View.OnClickListener() {
@@ -48,8 +51,7 @@ public class aktivitas extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
-                new DatePickerDialog(aktivitas.this, date, myCalendar
-                        .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
+                new DatePickerDialog(aktivitas.this, date, myCalendar.get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
                         myCalendar.get(Calendar.DAY_OF_MONTH)).show();
             }
         });
@@ -76,23 +78,24 @@ public class aktivitas extends AppCompatActivity {
             }
         });
 
-        button_tanggal.setOnClickListener(new View.OnClickListener() {
+        simpan.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
-                Toast.makeText(aktivitas.this,
-                        "Tanggal : " + txt_tgl.getText().toString() + "\n" +
-                                "Jam : " + txt_jam.getText().toString()
-                        , Toast.LENGTH_SHORT
-                ).show();
+                Intent tes = new Intent(aktivitas.this, MainActivity.class);
+                startActivity(tes);
+
+                tes.putExtra("date", "pertama");
+                tes.putExtra("mTimePicker", "kedua");
             }
+
+            //hh
+            private void updateLabel() {
+                String myFormat = "yyyy-MM-dd";
+                SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
+                txt_tgl.setText(sdf.format(myCalendar.getTime()));
+            }
+
         });
     }
-//hh
-    private void updateLabel() {
-        String myFormat = "yyyy-MM-dd";
-        SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
-        txt_tgl.setText(sdf.format(myCalendar.getTime()));
-    }
-
 }
