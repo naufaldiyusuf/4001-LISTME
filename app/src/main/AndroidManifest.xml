@@ -9,7 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".aktivitas"></activity>
+        <activity android:name=".login"></activity>
+        <activity
+            android:name=".listaktivitas"
+            android:label="@string/title_activity_listaktivitas"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".navigationdraw"
+            android:label="@string/title_activity_navigationdraw"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".aktivitas" />
         <activity android:name=".Pengeluaran" />
         <activity android:name=".Pemasukkan" />
         <activity
