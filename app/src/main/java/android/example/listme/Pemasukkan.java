@@ -19,6 +19,7 @@ public class Pemasukkan extends AppCompatActivity {
         pemasukan = (TextView) findViewById(R.id.isiJmlPemasuk_editText);
         note = (TextView) findViewById(R.id.isiNotePemasukkan_editText);
 
+        // buat intent
         Intent tes2 = new Intent(Pemasukkan.this, MainActivity.class);
         startActivity(tes2);
         tes2.putExtra("bulan", "pemasukan1");
