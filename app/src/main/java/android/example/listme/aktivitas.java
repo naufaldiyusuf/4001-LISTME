@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 import java.text.SimpleDateFormat;
@@ -23,7 +22,6 @@ public class aktivitas extends AppCompatActivity {
     Button txt_tgl, txt_jam;
     Button button_tanggal;
     Button simpan;
-    TextView entry, note;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,8 +33,6 @@ public class aktivitas extends AppCompatActivity {
         txt_jam = (Button) findViewById(R.id.waktu_button);
         //button_tanggal = (Button) findViewById(R.id.button_simpan);
         simpan = (Button) findViewById(R.id.button_simpan);
-        entry = (TextView) findViewById(R.id.entry_editText);
-        note = (TextView) findViewById(R.id.isiNotes_editText);
 
         myCalendar = Calendar.getInstance();
         date = new DatePickerDialog.OnDateSetListener() {
@@ -47,7 +43,7 @@ public class aktivitas extends AppCompatActivity {
                 myCalendar.set(Calendar.YEAR, year);
                 myCalendar.set(Calendar.MONTH, monthOfYear);
                 myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-                updateLabel();
+                //updateLabel();
             }
         };
         txt_tgl.setOnClickListener(new View.OnClickListener() {
@@ -91,11 +87,7 @@ public class aktivitas extends AppCompatActivity {
 
                 tes.putExtra("date", "pertama");
                 tes.putExtra("mTimePicker", "kedua");
-                tes.putExtra("entry", "ketiga");
-                tes.putExtra("note", "keempat");
             }
-        });
-    }
 
             //hh
             private void updateLabel() {
@@ -103,9 +95,7 @@ public class aktivitas extends AppCompatActivity {
                 SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
                 txt_tgl.setText(sdf.format(myCalendar.getTime()));
             }
-            //
 
-
-
+        });
+    }
 }
-//
