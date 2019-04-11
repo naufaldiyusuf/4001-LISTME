@@ -55,7 +55,7 @@ public class login extends AppCompatActivity {
 
             }
         });
-//menyambung firebase
+        //menyambung firebase
 
         register.setOnClickListener(new View.OnClickListener() {
             @Override

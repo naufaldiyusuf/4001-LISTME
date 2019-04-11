@@ -78,8 +78,9 @@ public class aktivitas extends AppCompatActivity {
             }
         });
 
+        // buat menyimpan onclicklistener
         simpan.setOnClickListener(new View.OnClickListener() {
-
+            // buat onclick
             @Override
             public void onClick(View view) {
                 Intent tes = new Intent(aktivitas.this, MainActivity.class);
@@ -89,7 +90,7 @@ public class aktivitas extends AppCompatActivity {
                 tes.putExtra("mTimePicker", "kedua");
             }
 
-            //hh
+            // ini untuk mengupdate label
             private void updateLabel() {
                 String myFormat = "yyyy-MM-dd";
                 SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
